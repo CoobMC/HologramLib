@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/HologramLib.iml" filepath="$PROJECT_DIR$/.idea/HologramLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NMSInterface/nmsinterface.iml" filepath="$PROJECT_DIR$/NMSInterface/nmsinterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v1_17/v1_17.iml" filepath="$PROJECT_DIR$/v1_17/v1_17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v1_18/v1_18.iml" filepath="$PROJECT_DIR$/v1_18/v1_18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v1_19/v1_19.iml" filepath="$PROJECT_DIR$/v1_19/v1_19.iml" />
+    </modules>
+  </component>
+</project>
