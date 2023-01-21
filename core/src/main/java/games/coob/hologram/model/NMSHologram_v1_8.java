@@ -12,6 +12,7 @@ import org.mineacademy.fo.Valid;
 import org.mineacademy.fo.collection.SerializedMap;
 import org.mineacademy.fo.remain.Remain;
 
+import java.util.List;
 import java.util.UUID;
 
 public class NMSHologram_v1_8 implements NMSHologramI {
@@ -21,7 +22,7 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	 */
 	private EntityArmorStand entityArmorStand;
 
-	private String[] lines;
+	private List<String> lines;
 
 	@Override
 	public void show(final Location location, final Player player, final String... linesOfText) {
@@ -64,12 +65,12 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	}
 
 	@Override
-	public void setLines(final String[] lines) {
+	public void setLines(final List<String> lines) {
 		this.lines = lines;
 	}
 
 	@Override
-	public String[] getLines() {
+	public List<String> getLines() {
 		return this.lines;
 	}
 
@@ -110,7 +111,7 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	 * @return
 	 */
 	public static NMSHologram_v1_8 deserialize(final SerializedMap map) {
-		final String[] lines = map.getStringList("Lines").toArray(new String[0]);
+		final List<String> lines = map.getStringList("Lines");
 		final Location lastLocation = map.getLocation("Last_Location");
 		final Object nmsWorld = Remain.getHandleWorld(lastLocation.getWorld());
 		final NMSHologram_v1_8 hologram = new NMSHologram_v1_8();

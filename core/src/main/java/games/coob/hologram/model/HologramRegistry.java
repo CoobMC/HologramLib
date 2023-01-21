@@ -31,6 +31,10 @@ public class HologramRegistry extends YamlConfig implements HologramRegistryI {
 		this.loadConfiguration(NO_DEFAULT, FoConstants.File.DATA);
 	}
 
+	@Override
+	protected void onSave() {
+		this.set("Saved_Holograms", this.getLoadedHolograms());
+	}
 
 	/**
 	 * Automatically loads stored disk Holograms and spawns them
@@ -41,8 +45,6 @@ public class HologramRegistry extends YamlConfig implements HologramRegistryI {
 			return;
 
 		// Tricky: This automatically calls the spawn method which puts the hologram to our loadedHolograms list
-
-		// TODO save
 		this.loadedHolograms = loadHolograms();
 
 		System.out.println("@Found " + this.loadedHolograms.size() + " Holograms on the disk");
@@ -114,11 +116,6 @@ public class HologramRegistry extends YamlConfig implements HologramRegistryI {
 	 */
 	@Override
 	public List<NMSHologramI> getLoadedHolograms() {
-		return Collections.unmodifiableList(loadedHolograms);
-	}
-
-	@Override
-	protected void onSave() {
-		this.set("Saved_Holograms", this.getLoadedHolograms());
+		return Collections.unmodifiableList(this.loadedHolograms);
 	}
 }

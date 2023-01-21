@@ -4,6 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.mineacademy.fo.model.ConfigSerializable;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface NMSHologramI extends ConfigSerializable {
@@ -18,9 +19,9 @@ public interface NMSHologramI extends ConfigSerializable {
 
 	Location getLocation();
 
-	void setLines(String[] lines);
+	void setLines(List<String> lines);
 
-	String[] getLines();
+	List<String> getLines();
 
 	void remove(Player player);
 

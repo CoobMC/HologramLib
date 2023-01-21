@@ -11,13 +11,14 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.metadata.FixedMetadataValue;
-import org.mineacademy.fo.MinecraftVersion;
 import org.mineacademy.fo.ReflectionUtil;
 import org.mineacademy.fo.Valid;
 import org.mineacademy.fo.collection.SerializedMap;
 import org.mineacademy.fo.plugin.SimplePlugin;
 import org.mineacademy.fo.remain.Remain;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 public class NMSHologram_v1_18 implements NMSHologramI {
@@ -27,7 +28,7 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 	 */
 	private ArmorStand entityArmorStand;
 
-	private String[] lines;
+	private List<String> lines;
 
 	@Override
 	public Object createEntity(final Object nmsWorld, final Location location) {
@@ -65,12 +66,12 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 	}
 
 	@Override
-	public void setLines(final String[] lines) {
+	public void setLines(final List<String> lines) {
 		this.lines = lines;
 	}
 
 	@Override
-	public String[] getLines() {
+	public List<String> getLines() {
 		return this.lines;
 	}
 
@@ -115,7 +116,7 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 	 * @return
 	 */
 	public static NMSHologram_v1_18 deserialize(final SerializedMap map) {
-		final String[] lines = map.getStringList("Lines").toArray(new String[0]);
+		final List<String> lines = map.getStringList("Lines");
 		final Location lastLocation = map.getLocation("Last_Location");
 		final Object nmsWorld = Remain.getHandleWorld(lastLocation.getWorld());
 		final NMSHologram_v1_18 hologram = new NMSHologram_v1_18();
@@ -135,19 +136,15 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 
 		final Object nmsWorld = Remain.getHandleWorld(location.getWorld());
 
-		setLines(linesOfText);
+		setLines(Arrays.asList(linesOfText));
 
 		for (final String line : linesOfText) {
 			final Object nmsArmorStand = this.createEntity(nmsWorld, location);
 			final org.bukkit.entity.ArmorStand armorStand = ReflectionUtil.invoke("getBukkitEntity", nmsArmorStand);
 
-			if (MinecraftVersion.atLeast(MinecraftVersion.V.v1_9))
-				armorStand.setInvisible(true);
-
+			armorStand.setVisible(false);
 			Remain.setCustomName(armorStand, line);
-
 			this.sendPackets(player, nmsArmorStand);
-
 			location = location.subtract(0, 0.26, 0);
 		}
 

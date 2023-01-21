@@ -4,8 +4,6 @@ import games.coob.nmsinterface.NMSHologramI;
 import games.coob.v1_17.NMSHologram_v1_17;
 import games.coob.v1_18.NMSHologram_v1_18;
 import games.coob.v1_19.NMSHologram_v1_19;
-import org.bukkit.Location;
-import org.bukkit.entity.Player;
 import org.mineacademy.fo.MinecraftVersion;
 import org.mineacademy.fo.collection.SerializedMap;
 import org.mineacademy.fo.exception.FoException;
@@ -24,7 +22,7 @@ public final class NMSHologramProvider {
 			throw new FoException("Unsupported Minecraft version " + MinecraftVersion.getServerVersion());
 	}
 
-	public static void sendTo(final Location location, final Player player, final String... linesOfText) {
+	/*public static void sendTo(final Location location, final Player player, final String... linesOfText) {
 		final NMSHologramI hologram;
 
 		if (MinecraftVersion.equals(MinecraftVersion.V.v1_17))
@@ -37,7 +35,7 @@ public final class NMSHologramProvider {
 			throw new FoException("Unsupported Minecraft version " + MinecraftVersion.getServerVersion());
 
 		hologram.show(location, player, linesOfText);
-	}
+	}*/
 
 	public static NMSHologramI createHologram() {
 		final NMSHologramI hologram;

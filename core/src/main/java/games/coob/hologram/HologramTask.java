@@ -18,13 +18,15 @@ public final class HologramTask extends BukkitRunnable {
 	@Override
 	public void run() {
 		final HologramRegistryI registry = HologramRegistryProvider.getHologramRegistryInstance();
+		final double range = 40;
 
 		for (final Player player : Remain.getOnlinePlayers()) {
 			for (final NMSHologramI hologram : registry.getLoadedHolograms()) {
-				if (!player.hasMetadata(hologram.getUniqueId().toString()) && registry.isRegistered(hologram))
-					showPlayersInRange(hologram, player, 20);
 
-				if (!player.getWorld().equals(hologram.getLocation().getWorld()) || player.getLocation().distance(hologram.getLocation()) > 20)
+				if (!player.hasMetadata(hologram.getUniqueId().toString()) && registry.isRegistered(hologram))
+					showPlayersInRange(hologram, player, range);
+
+				if (!player.getWorld().equals(hologram.getLocation().getWorld()) || player.getLocation().distance(hologram.getLocation()) > range)
 					hologram.hide(player);
 			}
 		}
@@ -33,12 +35,13 @@ public final class HologramTask extends BukkitRunnable {
 	/*
 	 * Shows the hologram to players within the set range
 	 */
-	private void showPlayersInRange(final NMSHologramI hologram, final Player player, double range) {
+	private void showPlayersInRange(final NMSHologramI hologram, final Player player, final double range) {
 		final Location hologramLocation = hologram.getLocation();
 		final Location playerLocation = player.getLocation();
+		final String[] array = new String[hologram.getLines().size()];
 
 		if (player.getWorld().equals(hologramLocation.getWorld()) && playerLocation.distance(hologramLocation) <= range) {
-			hologram.show(hologramLocation, player, hologram.getLines());
+			hologram.show(hologramLocation, player, hologram.getLines().toArray(array));
 		}
 	}
 }
