@@ -9,9 +9,7 @@ import java.util.UUID;
 
 public interface NMSHologramI extends ConfigSerializable {
 
-	void show(Location location, final Player player, final String... linesOfText);
-
-	Object createEntity(Object nmsWorld, Location location);
+	void createHologram(Location location, final Player player, final String... linesOfText);
 
 	void sendPackets(Player player, Object nmsArmorStand);
 
@@ -26,4 +24,8 @@ public interface NMSHologramI extends ConfigSerializable {
 	void remove(Player player);
 
 	void hide(Player player);
+
+	void show(final Location location, final Player player, final String... linesOfText);
+
+	boolean isHidden();
 }

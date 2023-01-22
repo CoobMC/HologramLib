@@ -13,8 +13,8 @@ public class HologramCommand extends SimpleCommand {
 	protected void onCommand() {
 		checkConsole();
 
-		final NMSHologramI hologramI = NMSHologramProvider.createHologram();
+		final NMSHologramI hologramI = NMSHologramProvider.getInstance();
 
-		hologramI.show(getPlayer().getLocation().add(0, 1.5, 0), getPlayer(), "Hello", "there");
+		hologramI.createHologram(getPlayer().getLocation().add(0, 1.5, 0), getPlayer(), "Hello", "there");
 	}
 }

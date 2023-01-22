@@ -30,7 +30,6 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 
 	private List<String> lines;
 
-	@Override
 	public Object createEntity(final Object nmsWorld, final Location location) {
 		entityArmorStand = new ArmorStand((ServerLevel) nmsWorld, location.getX(), location.getY(), location.getZ());
 
@@ -88,6 +87,16 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 		player.removeMetadata(getUniqueId().toString(), SimplePlugin.getInstance());
 	}
 
+	@Override
+	public void show(final Location location, final Player player, final String... linesOfText) {
+
+	}
+
+	@Override
+	public boolean isHidden() {
+		return false;
+	}
+
 	/**
 	 * Return if this hologram is spawned
 	 *
@@ -128,7 +137,7 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 	}
 
 	@Override
-	public void show(Location location, final Player player, final String... linesOfText) {
+	public void createHologram(Location location, final Player player, final String... linesOfText) {
 		final World world = location.getWorld();
 
 		if (world == null)

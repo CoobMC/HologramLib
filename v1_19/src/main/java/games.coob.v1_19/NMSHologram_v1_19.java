@@ -17,6 +17,7 @@ import org.mineacademy.fo.collection.SerializedMap;
 import org.mineacademy.fo.plugin.SimplePlugin;
 import org.mineacademy.fo.remain.Remain;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -29,24 +30,13 @@ public class NMSHologram_v1_19 implements NMSHologramI {
 	@Getter
 	private ArmorStand entityArmorStand;
 
+	private final List<ArmorStand> entityLinesList = new ArrayList<>();
+
 	private List<String> lines;
 
-	@Override
 	public Object createEntity(final Object nmsWorld, final Location location) {
 		entityArmorStand = new ArmorStand((ServerLevel) nmsWorld, location.getX(), location.getY(), location.getZ());
-
-		if (!HologramRegistry_v1_19.getInstance().isRegistered(entityArmorStand.getBukkitEntity().getUniqueId()))
-			HologramRegistry_v1_19.getInstance().register(this);
-
 		return entityArmorStand;
-	}
-
-	@Override
-	public void sendPackets(final Player player, final Object nmsArmorStand) {
-		final ArmorStand nmsStand = (ArmorStand) nmsArmorStand;
-
-		Remain.sendPacket(player, new ClientboundAddEntityPacket(nmsStand));
-		Remain.sendPacket(player, new ClientboundSetEntityDataPacket(nmsStand.getId(), nmsStand.getEntityData().packDirty()));
 	}
 
 	@Override
@@ -67,6 +57,17 @@ public class NMSHologram_v1_19 implements NMSHologramI {
 	}
 
 	@Override
+	public void sendPackets(final Player player, final Object nmsArmorStand) {
+		final ArmorStand nmsStand = (ArmorStand) nmsArmorStand;
+
+		System.out.println("sending packet");
+
+		Remain.sendPacket(player, new ClientboundAddEntityPacket(nmsStand));
+		Remain.sendPacket(player, new ClientboundSetEntityDataPacket(nmsStand.getId(), nmsStand.getEntityData().packDirty()));
+		player.setMetadata(getUniqueId().toString(), new FixedMetadataValue(SimplePlugin.getInstance(), ""));
+	}
+
+	@Override
 	public void setLines(final List<String> lines) {
 		this.lines = lines;
 	}
@@ -78,7 +79,9 @@ public class NMSHologram_v1_19 implements NMSHologramI {
 
 	@Override
 	public void remove(final Player player) {
-		Remain.sendPacket(player, new ClientboundRemoveEntitiesPacket(this.entityArmorStand.getId()));
+		for (final ArmorStand armorStand : this.entityLinesList)
+			Remain.sendPacket(player, new ClientboundRemoveEntitiesPacket(armorStand.getId()));
+
 		HologramRegistry_v1_19.getInstance().unregister(this);
 		player.removeMetadata(getUniqueId().toString(), SimplePlugin.getInstance());
 		System.out.println("removed");
@@ -86,19 +89,47 @@ public class NMSHologram_v1_19 implements NMSHologramI {
 
 	@Override
 	public void hide(final Player player) {
-		Remain.sendPacket(player, new ClientboundRemoveEntitiesPacket(this.entityArmorStand.getId()));
+		for (final ArmorStand armorStand : this.entityLinesList)
+			Remain.sendPacket(player, new ClientboundRemoveEntitiesPacket(armorStand.getId()));
+
 		player.removeMetadata(getUniqueId().toString(), SimplePlugin.getInstance());
 		System.out.println("hiding");
 	}
 
 	@Override
-	public void show(Location location, final Player player, final String... linesOfText) {
+	public void show(final Location location, final Player player, final String... linesOfText) {
+		System.out.println("showing");
+
+		for (final ArmorStand armor : this.entityLinesList) { // TODO
+			final String line1 = armor.getName().getString();
+			System.out.println("Name: " + line1);
+		}
+
+		for (int i = 0; i < this.lines.size(); i++) {
+			System.out.println("count: " + i);
+			final String line = this.lines.get(i);
+			final ArmorStand nmsArmorStand = this.entityLinesList.get(i);
+
+			System.out.println("Line: " + line);
+			System.out.println("Hologram: " + nmsArmorStand);
+
+			final org.bukkit.entity.ArmorStand armorStand = ReflectionUtil.invoke("getBukkitEntity", nmsArmorStand);
+
+			Remain.setCustomName(armorStand, line);
+			this.sendPackets(player, nmsArmorStand);
+		}
+
+		player.setMetadata(getUniqueId().toString(), new FixedMetadataValue(SimplePlugin.getInstance(), ""));
+	}
+
+	@Override
+	public void createHologram(Location location, final Player player, final String... linesOfText) {
 		final World world = location.getWorld();
 
 		if (world == null)
 			return;
 
-		System.out.println("showing");
+		System.out.println("creating");
 
 		final Object nmsWorld = Remain.getHandleWorld(location.getWorld());
 
@@ -112,9 +143,11 @@ public class NMSHologram_v1_19 implements NMSHologramI {
 			Remain.setCustomName(armorStand, line);
 			this.sendPackets(player, nmsArmorStand);
 			location = location.subtract(0, 0.26, 0);
+			this.entityLinesList.add((ArmorStand) nmsArmorStand);
 		}
 
 		player.setMetadata(getUniqueId().toString(), new FixedMetadataValue(SimplePlugin.getInstance(), ""));
+		HologramRegistry_v1_19.getInstance().register(this);
 	}
 
 	/**
@@ -122,9 +155,13 @@ public class NMSHologram_v1_19 implements NMSHologramI {
 	 *
 	 * @return
 	 */
-	private boolean isCreated() {
-		entityArmorStand.getBukkitEntity();
-		return true;
+	private boolean isCreated() { // TODO test this
+		return entityArmorStand != null;
+	}
+
+	@Override
+	public boolean isHidden() { // TODO check if it works
+		return this.entityArmorStand.isRemoved();
 	}
 
 	@Override
@@ -137,7 +174,7 @@ public class NMSHologram_v1_19 implements NMSHologramI {
 				"Last_Location", this.getLocation());
 	}
 
-	public static NMSHologram_v1_19 deserialize(final SerializedMap map) {
+	public static NMSHologram_v1_19 deserialize(final SerializedMap map) { // TODO
 		final List<String> lines = map.getStringList("Lines");
 		final Location lastLocation = map.getLocation("Last_Location");
 		final Object nmsWorld = Remain.getHandleWorld(lastLocation.getWorld());

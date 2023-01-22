@@ -11,7 +11,7 @@ import org.mineacademy.fo.plugin.SimplePlugin;
  * <p>
  * It uses Foundation for fast and efficient development process.
  */
-public final class HologramLib extends SimplePlugin {
+public final class HologramLib extends SimplePlugin { // TODO make people load the API
 
 	/**
 	 * Automatically perform login ONCE when the plugin starts.

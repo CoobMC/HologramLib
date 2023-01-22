@@ -25,11 +25,10 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	private List<String> lines;
 
 	@Override
-	public void show(final Location location, final Player player, final String... linesOfText) {
+	public void createHologram(final Location location, final Player player, final String... linesOfText) {
 
 	}
 
-	@Override
 	public Object createEntity(final Object nmsWorld, final Location location) {
 		entityArmorStand = new EntityArmorStand((WorldServer) nmsWorld, location.getX(), location.getY(), location.getZ());
 
@@ -82,6 +81,16 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	@Override
 	public void hide(final Player player) {
 
+	}
+
+	@Override
+	public void show(final Location location, final Player player, final String... linesOfText) {
+
+	}
+
+	@Override
+	public boolean isHidden() {
+		return false;
 	}
 
 	/**

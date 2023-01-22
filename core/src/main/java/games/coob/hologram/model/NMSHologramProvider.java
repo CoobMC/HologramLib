@@ -37,7 +37,7 @@ public final class NMSHologramProvider {
 		hologram.show(location, player, linesOfText);
 	}*/
 
-	public static NMSHologramI createHologram() {
+	public static NMSHologramI getInstance() {
 		final NMSHologramI hologram;
 
 		if (MinecraftVersion.equals(MinecraftVersion.V.v1_17))
