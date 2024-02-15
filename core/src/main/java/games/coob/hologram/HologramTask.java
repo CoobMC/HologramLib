@@ -1,10 +1,8 @@
 package games.coob.hologram;
 
-import games.coob.hologram.model.HologramRegistryProvider;
-import games.coob.nmsinterface.HologramRegistryI;
-import games.coob.nmsinterface.NMSHologramI;
+import games.coob.nmsinterface.HologramAPI;
+import games.coob.nmsinterface.HologramRegistry;
 import lombok.RequiredArgsConstructor;
-import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.mineacademy.fo.remain.Remain;
@@ -13,33 +11,24 @@ import org.mineacademy.fo.remain.Remain;
  * Represents a self-repeating task managing hologram.
  */
 @RequiredArgsConstructor
-public final class HologramTask extends BukkitRunnable {
+public final class HologramTask extends BukkitRunnable { // TODO show holograms when rejoining
 
-	@Override
-	public void run() {
-		final HologramRegistryI registry = HologramRegistryProvider.getHologramRegistryInstance();
-		final double range = 20;
+    @Override
+    public void run() {
+        for (final HologramRegistry registry : HologramRegistry.getHolograms()) {
+            final HologramAPI hologramAPI = registry.getHologram();
 
-		for (final Player player : Remain.getOnlinePlayers()) {
-			for (final NMSHologramI hologram : registry.getLoadedHolograms()) {
-				if (!player.hasMetadata(hologram.getUniqueId().toString()) && registry.isRegistered(hologram))
-					showPlayersInRange(hologram, player, range);
+            for (final Player player : Remain.getOnlinePlayers())
+                hologramAPI.updateVisibility(player);
+        }
 
-				if (player.getLocation().distance(hologram.getLocation()) > range && !hologram.isHidden())
-					hologram.hide(player);
-			}
-		}
-	}
+        //for (final Player player : Remain.getOnlinePlayers()) {
+        //  for (final HologramRegistry hologram : HologramRegistryProvider.getHolograms()) {
+        //    hologram.getHologram().updateVisibility(player);
+				/*if (!player.hasMetadata(hologram.getUniqueId().toString()))
+					hologram.show(player);
 
-	/*
-	 * Shows the hologram to players within the set range
-	 */
-	private void showPlayersInRange(final NMSHologramI hologram, final Player player, final double range) {
-		final Location hologramLocation = hologram.getLocation();
-		final Location playerLocation = player.getLocation();
-		final String[] array = new String[hologram.getLines().size()];
-
-		if (player.getWorld().equals(hologramLocation.getWorld()) && playerLocation.distance(hologramLocation) <= range)
-			hologram.show(hologramLocation, player, hologram.getLines().toArray(array));
-	}
+				if (player.getLocation().distance(hologram.getLocation()) > hologram.getDisplayRange() && hologram.isViewer(player)) // TODO isShown for a specific player
+					hologram.hide(player);*/
+    }
 }

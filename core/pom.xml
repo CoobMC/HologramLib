@@ -34,9 +34,9 @@
 
         <!-- Change foundation.version to the latest one from
              https://github.com/kangarko/Foundation/releases -->
-        <foundation.version>6.2.5</foundation.version>
+        <foundation.version>6.6.2</foundation.version>
 
-        <remapped.version>1.19.3-R0.1-SNAPSHOT</remapped.version>
+        <remapped.version>1.19.4-R0.1-SNAPSHOT</remapped.version>
 
         <!-- DO NOT EDIT -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

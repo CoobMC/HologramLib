@@ -1,2 +1,5 @@
 /Users/jack.bikar/Workspace/HologramLib/NMSInterface/src/main/java/games/coob/nmsinterface/NMSHologramI.java
-/Users/jack.bikar/Workspace/HologramLib/NMSInterface/src/main/java/games/coob/nmsinterface/HologramRegistryI.java
+/Users/jack.bikar/Workspace/HologramLib/NMSInterface/src/main/java/games/coob/nmsinterface/HologramAPI.java
+/Users/jack.bikar/Workspace/HologramLib/NMSInterface/src/main/java/games/coob/nmsinterface/HologramRegistryOld.java
+/Users/jack.bikar/Workspace/HologramLib/NMSInterface/src/main/java/games/coob/nmsinterface/HologramRegistryO.java
+/Users/jack.bikar/Workspace/HologramLib/NMSInterface/src/main/java/games/coob/nmsinterface/HologramRegistry.java

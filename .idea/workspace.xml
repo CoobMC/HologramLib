@@ -4,7 +4,200 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1db24b0c-3aac-41c3-a968-b49ecc3e427b" name="Changes" comment="" />
+    <list default="true" id="1db24b0c-3aac-41c3-a968-b49ecc3e427b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NMSInterface/src/main/java/games/coob/nmsinterface/HologramRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_kangarko_Foundation_6_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_oshi_oshi_core_5_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_oshi_oshi_core_6_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_11_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_7_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_31_0_1_jre.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_31_1_jre.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_19_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_authlib_3_16_29.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_authlib_3_3_39.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_brigadier_1_0_18.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_datafixerupper_4_1_27.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_datafixerupper_5_0_28.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_javabridge_1_2_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_javabridge_2_0_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_logging_1_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_logging_1_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_11_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_68_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_82_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_82_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_82_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_82_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_82_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_82_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_classes_epoll_4_1_82_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_aarch_64_4_1_82_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_82_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_82_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__it_unimi_dsi_fastutil_8_5_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jline_jline_2_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_27.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_29.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_5_10_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_5_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_platform_5_10_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_platform_5_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_16_R0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_jopt_simple_jopt_simple_5_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_14.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_17_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_19_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_17_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_19_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_iostreams_2_17_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_iostreams_2_19_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_slf4j18_impl_2_17_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_slf4j2_impl_2_19_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_3_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_3_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_builder_support_3_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_builder_support_3_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_3_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_3_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_builder_3_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_builder_3_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_repository_metadata_3_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_repository_metadata_3_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_resolver_provider_3_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_resolver_provider_3_8_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_api_1_6_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_connector_basic_1_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_connector_basic_1_7_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_impl_1_6_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_spi_1_6_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_transport_http_1_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_transport_http_1_7_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_util_1_6_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_12_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_interpolation_1_26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_utils_3_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_sisu_org_eclipse_sisu_inject_0_3_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_joml_joml_1_10_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_AuthMe_5_6_0_SNAPSHOT_2595.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_BentoBox_1_22_0_SNAPSHOT_b2312.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_CMI_API_9_0_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_CitizensAPI_2_0_30_b2816.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_DiscordSRV_1_26_1_SNAPSHOT_c6daaa5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_EssentialsX_2_20_0_SNAPSHOT_1441.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_FactionsUUID_1_6_9_5_U0_6_11_b287.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_Factions_3_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_MassiveCore_3_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_Multiverse_Core_4_3_2_SNAPSHOT_870.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_NuVotifier_2_7_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_PlaceholderAPI_2_11_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_ProtocolLib_5_0_0_SNAPSHOT_607.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_Residence_5_1_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_SimpleClans_2_18_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_TownyChat_0_99.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_Towny_0_98_4_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_Vault_1_7_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_WorldEdit_7_2_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_WorldGuard_7_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mineacademy_plugin_mcMMO_2_1_218.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_30.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_32.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_8_0_beta4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_2_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_2_R0_1_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_19_3_R0_1_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_remapped_mojang_1_17_1_R0_1_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_remapped_mojang_1_18_2_R0_1_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_remapped_mojang_1_19_3_R0_1_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_sqlite_jdbc_3_36_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_30.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_33.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NMSInterface/nmsinterface.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NMSInterface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NMSInterface/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NMSInterface/src/main/java/games/coob/nmsinterface/HologramRegistryI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NMSInterface/src/main/java/games/coob/nmsinterface/NMSHologramI.java" beforeDir="false" afterPath="$PROJECT_DIR$/NMSInterface/src/main/java/games/coob/nmsinterface/NMSHologramI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NMSInterface/target/classes/games/coob/nmsinterface/HologramRegistryI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NMSInterface/target/classes/games/coob/nmsinterface/NMSHologramI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NMSInterface/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/NMSInterface/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NMSInterface/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/NMSInterface/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NMSInterface/target/nmsinterface-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/NMSInterface/target/nmsinterface-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/HologramCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/HologramCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/HologramLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/HologramLib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/HologramTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/HologramTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/HologramRegistry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/HologramRegistryProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/HologramRegistryProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologramProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_12.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_16.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_16.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_8.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/HologramCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/HologramCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/HologramLib.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/HologramLib.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/HologramTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/HologramTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/model/HologramRegistry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/model/HologramRegistryProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/model/NMSHologramProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/model/NMSHologram_v1_12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/model/NMSHologram_v1_16.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/model/NMSHologram_v1_8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/core-1.0.0-remapped-obf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/core-1.0.0-remapped-obf.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/original-HologramLib-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/original-HologramLib-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_17/src/main/java/games.coob.v1_17/HologramRegistry_v1_17.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_17/src/main/java/games.coob.v1_17/HologramRegistry_v1_17.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_17/src/main/java/games.coob.v1_17/NMSHologram_v1_17.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_17/src/main/java/games.coob.v1_17/NMSHologram_v1_17.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_17/target/classes/games/coob/v1_17/HologramRegistry_v1_17.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_17/target/classes/games/coob/v1_17/NMSHologram_v1_17.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_17/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/v1_17/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_17/target/original-v1_17-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/v1_17/target/original-v1_17-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_17/target/v1_17-1.0.0-remapped-obf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/v1_17/target/v1_17-1.0.0-remapped-obf.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_17/target/v1_17-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/v1_17/target/v1_17-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_17/v1_17.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_18/src/main/java/games.coob.v1_18/HologramRegistry_v1_18.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_18/src/main/java/games.coob.v1_18/HologramRegistry_v1_18.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_18/src/main/java/games.coob.v1_18/NMSHologram_v1_18.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_18/src/main/java/games.coob.v1_18/NMSHologram_v1_18.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_18/target/classes/games/coob/v1_18/HologramRegistry_v1_18.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_18/target/classes/games/coob/v1_18/NMSHologram_v1_18.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_18/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/v1_18/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_18/target/original-v1_18-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/v1_18/target/original-v1_18-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_18/target/v1_18-1.0.0-remapped-obf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/v1_18/target/v1_18-1.0.0-remapped-obf.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_18/target/v1_18-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/v1_18/target/v1_18-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_18/v1_18.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_19/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/v1_19/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_19/src/main/java/games.coob.v1_19/HologramRegistry_v1_19.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_19/src/main/java/games.coob.v1_19/HologramRegistry_v1_19.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_19/src/main/java/games.coob.v1_19/NMSHologram_v1_19.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_19/src/main/java/games.coob.v1_19/NMSHologram_v1_19.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_19/target/classes/games/coob/v1_19/HologramRegistry_v1_19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_19/target/classes/games/coob/v1_19/NMSHologram_v1_19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_19/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/v1_19/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_19/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/v1_19/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_19/target/original-v1_19-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/v1_19/target/original-v1_19-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_19/target/v1_19-1.0.0-remapped-obf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/v1_19/target/v1_19-1.0.0-remapped-obf.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_19/target/v1_19-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/v1_19/target/v1_19-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_19/v1_19.iml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,15 +213,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="downloadDocsAutomatically" value="true" />
@@ -36,33 +227,50 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2JeZwCI6fQ4AQqWLA5iXoLbKD0I" />
   <component name="ProjectViewState">
     <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/v1_19/src" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.core [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.nmsinterface [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.v1_19 [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jack.bikar/Workspace/HologramLib&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/v1_19/src/main/java/games.coob.v1_19" />
+      <recent name="$PROJECT_DIR$/NMSInterface/src/main/java/games/coob/nmsinterface" />
       <recent name="$PROJECT_DIR$/v1_19/src" />
       <recent name="$PROJECT_DIR$/v1_19/src/main" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/core/src/main/java/games/coob/hologram" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="games.coob.hologram.model" />
+      <recent name="games.coob.v1_19" />
+      <recent name="games.coob.nmsinterface" />
+      <recent name="games.coob.hologram.listener" />
     </key>
   </component>
   <component name="RunManager" selected="Maven.core [clean,install]">
@@ -72,6 +280,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -81,9 +290,13 @@
                 <option value="install" />
               </list>
             </option>
+            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/core" />
@@ -98,6 +311,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -107,9 +321,13 @@
                 <option value="install" />
               </list>
             </option>
+            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/NMSInterface" />
@@ -124,6 +342,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -133,9 +352,13 @@
                 <option value="install" />
               </list>
             </option>
+            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/v1_17" />
@@ -150,6 +373,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -159,9 +383,13 @@
                 <option value="install" />
               </list>
             </option>
+            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/v1_18" />
@@ -176,6 +404,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -185,9 +414,13 @@
                 <option value="install" />
               </list>
             </option>
+            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/v1_19" />
@@ -205,6 +438,23 @@
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1db24b0c-3aac-41c3-a968-b49ecc3e427b" name="Changes" comment="" />
+      <created>1706983346678</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706983346678</updated>
+      <workItem from="1706983347782" duration="14162000" />
+      <workItem from="1707388230175" duration="879000" />
+      <workItem from="1707998228120" duration="3775000" />
+      <workItem from="1708002248592" duration="7765000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
     <option featureType="dependencySupport" implementationName="java:org.spigotmc:spigot-api" />

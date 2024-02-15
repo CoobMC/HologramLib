@@ -1,2 +1,3 @@
-games/coob/nmsinterface/HologramRegistryI.class
-games/coob/nmsinterface/NMSHologramI.class
+games/coob/nmsinterface/HologramRegistryO.class
+games/coob/nmsinterface/HologramAPI.class
+games/coob/nmsinterface/HologramRegistry.class

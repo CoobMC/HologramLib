@@ -1,4 +1,4 @@
-package games.coob.v1_18;
+/*package games.coob.v1_18;
 
 import games.coob.nmsinterface.NMSHologramI;
 import net.citizensnpcs.api.npc.NPCRegistry;
@@ -19,6 +19,7 @@ import org.mineacademy.fo.remain.Remain;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 public class NMSHologram_v1_18 implements NMSHologramI {
@@ -26,38 +27,38 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 	/**
 	 * The spawned NMS entity
 	 */
-	private ArmorStand entityArmorStand;
+	/*private ArmorStand entityArmorStand;
 
 	private List<String> lines;
 
 	public Object createEntity(final Object nmsWorld, final Location location) {
 		entityArmorStand = new ArmorStand((ServerLevel) nmsWorld, location.getX(), location.getY(), location.getZ());
 
-		if (!HologramRegistry_v1_18.getInstance().isRegistered(entityArmorStand.getBukkitEntity().getUniqueId()))
-			HologramRegistry_v1_18.getInstance().register(this);
-
 		return entityArmorStand;
 	}
 
-	@Override
+
 	public void sendPackets(final Player player, final Object nmsArmorStand) {
 		final ArmorStand nmsStand = (ArmorStand) nmsArmorStand;
 
 		Remain.sendPacket(player, new ClientboundAddEntityPacket(nmsStand));
 		Remain.sendPacket(player, new ClientboundSetEntityDataPacket(nmsStand.getId(), nmsStand.getEntityData(), true));
-	}
+	}*/
 
-	@Override
+	/*@Override
 	public UUID getUniqueId() {
 		return this.entityArmorStand.getBukkitEntity().getUniqueId();
-	}
+	}*/
 
-	/**
-	 * Convenience method to return the location of this NPC.
-	 *
-	 * @return
-	 */
-	@Override
+/**
+ * Convenience method to return the location of this NPC.
+ *
+ * @return Converts information saved in data.db file as a map into an NPC,
+ * also spawning it. After spawn this NPC will auto register in {@link NPCRegistry}
+ * @param map
+ * @return
+ */
+	/*@Override
 	public Location getLocation() {
 		Valid.checkBoolean(this.isCreated(), "Cannot call getLocation when " + this + " is not created");
 
@@ -65,6 +66,21 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 	}
 
 	@Override
+	public void updateLines(final String... lines) {
+
+	}
+
+	@Override
+	public void addLines(final String... lines) {
+
+	}
+
+	@Override
+	public void removeLines(final Integer... index) {
+
+	}
+
+
 	public void setLines(final List<String> lines) {
 		this.lines = lines;
 	}
@@ -75,9 +91,14 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 	}
 
 	@Override
+	public void remove() {
+
+	}
+
+
 	public void remove(final Player player) {
 		Remain.sendPacket(player, new ClientboundRemoveEntitiesPacket(this.entityArmorStand.getId()));
-		HologramRegistry_v1_18.getInstance().unregister(this);
+		//HologramRegistry_v1_18.getInstance().unregister(this);
 		player.removeMetadata(getUniqueId().toString(), SimplePlugin.getInstance());
 	}
 
@@ -88,12 +109,57 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 	}
 
 	@Override
-	public void show(final Location location, final Player player, final String... linesOfText) {
+	public void show(final Player player) {
 
 	}
 
 	@Override
-	public boolean isHidden() {
+	public void updateVisibility(final Player player) {
+
+	}
+
+
+	public boolean isShown(final Player player) {
+		return false;
+	}
+
+	@Override
+	public boolean isViewer(final Player player) {
+		return false;
+	}
+
+	@Override
+	public Set<UUID> getViewers() {
+		return null;
+	}
+
+	@Override
+	public boolean canShow(final Player player) {
+		return false;
+	}
+
+	@Override
+	public void setPermission(final String permission) {
+
+	}
+
+	@Override
+	public String getPermission() {
+		return null;
+	}
+
+	@Override
+	public double getDisplayRange() {
+		return 0;
+	}
+
+	@Override
+	public void setDisplayRange(final double range) {
+
+	}
+
+	@Override
+	public boolean isInDisplayRange(final Player player) {
 		return false;
 	}
 
@@ -102,7 +168,7 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 	 *
 	 * @return
 	 */
-	private boolean isCreated() {
+	/*private boolean isCreated() {
 		entityArmorStand.getBukkitEntity();
 		return true;
 	}
@@ -115,16 +181,16 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 				"UUID", this.entityArmorStand.getBukkitEntity().getUniqueId(),
 				"Lines", this.lines,
 				"Last_Location", this.getLocation());
-	}
+	}*/
 
-	/**
-	 * Converts information saved in data.db file as a map into an NPC,
-	 * also spawning it. After spawn this NPC will auto register in {@link NPCRegistry}
-	 *
-	 * @param map
-	 * @return
-	 */
-	public static NMSHologram_v1_18 deserialize(final SerializedMap map) {
+/**
+ * Converts information saved in data.db file as a map into an NPC,
+ * also spawning it. After spawn this NPC will auto register in {@link NPCRegistry}
+ *
+ * @param map
+ * @return
+ */
+	/*public static NMSHologram_v1_18 deserialize(final SerializedMap map) {
 		final List<String> lines = map.getStringList("Lines");
 		final Location lastLocation = map.getLocation("Last_Location");
 		final Object nmsWorld = Remain.getHandleWorld(lastLocation.getWorld());
@@ -137,7 +203,7 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 	}
 
 	@Override
-	public void createHologram(Location location, final Player player, final String... linesOfText) {
+	public void createHologram(final String id, Location location, final Player player, final String... linesOfText) {
 		final World world = location.getWorld();
 
 		if (world == null)
@@ -159,4 +225,9 @@ public class NMSHologram_v1_18 implements NMSHologramI {
 
 		player.setMetadata(getUniqueId().toString(), new FixedMetadataValue(SimplePlugin.getInstance(), ""));
 	}
-}
+
+	@Override
+	public void sendPackets(final Object nmsArmorStand, final Player... player) {
+
+	}
+}*/

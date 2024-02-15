@@ -1,9 +1,5 @@
-games/coob/hologram/model/HologramRegistry.class
-games/coob/hologram/model/NMSHologram_v1_16.class
-games/coob/hologram/model/HologramRegistryProvider.class
 games/coob/hologram/HologramTask.class
 games/coob/hologram/HologramLib.class
-games/coob/hologram/model/NMSHologram_v1_12.class
-games/coob/hologram/model/NMSHologram_v1_8.class
 games/coob/hologram/HologramCommand.class
-games/coob/hologram/model/NMSHologramProvider.class
+games/coob/hologram/listener/PlayerListener.class
+games/coob/hologram/model/HologramProvider.class

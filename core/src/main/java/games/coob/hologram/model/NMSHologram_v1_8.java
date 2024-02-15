@@ -1,4 +1,4 @@
-package games.coob.hologram.model;
+/*package games.coob.hologram.model;
 
 import games.coob.nmsinterface.NMSHologramI;
 import net.citizensnpcs.api.npc.NPCRegistry;
@@ -13,6 +13,7 @@ import org.mineacademy.fo.collection.SerializedMap;
 import org.mineacademy.fo.remain.Remain;
 
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 public class NMSHologram_v1_8 implements NMSHologramI {
@@ -20,12 +21,17 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	/**
 	 * The spawned NMS entity
 	 */
-	private EntityArmorStand entityArmorStand;
+	/*private EntityArmorStand entityArmorStand;
 
 	private List<String> lines;
 
 	@Override
-	public void createHologram(final Location location, final Player player, final String... linesOfText) {
+	public void createHologram(final String id, final Location location, final Player player, final String... linesOfText) {
+
+	}
+
+	@Override
+	public void sendPackets(final Object nmsArmorStand, final Player... player) {
 
 	}
 
@@ -38,7 +44,7 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 		return entityArmorStand;
 	}
 
-	@Override
+
 	public void sendPackets(final Player player, final Object nmsArmorStand) {
 		final EntityArmorStand nmsStand = (EntityArmorStand) nmsArmorStand;
 
@@ -56,7 +62,7 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	 *
 	 * @return
 	 */
-	@Override
+	/*@Override
 	public Location getLocation() {
 		Valid.checkBoolean(this.isCreated(), "Cannot call getLocation when " + this + " is not created");
 
@@ -64,6 +70,21 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	}
 
 	@Override
+	public void updateLines(final String... lines) {
+
+	}
+
+	@Override
+	public void addLines(final String... lines) {
+
+	}
+
+	@Override
+	public void removeLines(final Integer... index) {
+
+	}
+
+
 	public void setLines(final List<String> lines) {
 		this.lines = lines;
 	}
@@ -74,6 +95,11 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	}
 
 	@Override
+	public void remove() {
+
+	}
+
+
 	public void remove(final Player player) {
 
 	}
@@ -84,13 +110,33 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	}
 
 	@Override
-	public void show(final Location location, final Player player, final String... linesOfText) {
+	public void hideAll() {
 
 	}
 
 	@Override
-	public boolean isHidden() {
+	public void show(final Player player) {
+
+	}
+
+	@Override
+	public void showAll() {
+
+	}
+
+
+	public boolean isShown(final Player player) {
 		return false;
+	}
+
+	@Override
+	public boolean isViewer(final Player player) {
+		return false;
+	}
+
+	@Override
+	public Set<UUID> getViewers() {
+		return null;
 	}
 
 	/**
@@ -98,7 +144,7 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	 *
 	 * @return
 	 */
-	boolean isCreated() {
+	/*boolean isCreated() {
 		return entityArmorStand.getBukkitEntity() != null;
 	}
 
@@ -119,7 +165,7 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 	 * @param map
 	 * @return
 	 */
-	public static NMSHologram_v1_8 deserialize(final SerializedMap map) {
+	/*public static NMSHologram_v1_8 deserialize(final SerializedMap map) {
 		final List<String> lines = map.getStringList("Lines");
 		final Location lastLocation = map.getLocation("Last_Location");
 		final Object nmsWorld = Remain.getHandleWorld(lastLocation.getWorld());
@@ -130,4 +176,4 @@ public class NMSHologram_v1_8 implements NMSHologramI {
 
 		return hologram;
 	}
-}
+}*/

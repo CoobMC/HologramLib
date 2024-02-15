@@ -1,6 +1,8 @@
 package games.coob.hologram;
 
-import games.coob.hologram.model.HologramRegistryProvider;
+import games.coob.hologram.listener.PlayerListener;
+import games.coob.hologram.model.HologramProvider;
+import games.coob.nmsinterface.HologramRegistry;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.plugin.SimplePlugin;
 
@@ -11,42 +13,50 @@ import org.mineacademy.fo.plugin.SimplePlugin;
  * <p>
  * It uses Foundation for fast and efficient development process.
  */
-public final class HologramLib extends SimplePlugin { // TODO make people load the API
+public final class HologramLib extends SimplePlugin { // TODO make people load the API | make a lib package for with used foundation classes
 
-	/**
-	 * Automatically perform login ONCE when the plugin starts.
-	 */
-	@Override
-	protected void onPluginStart() {
-		HologramRegistryProvider.getHologramRegistryInstance().spawnFromDisk();
-	}
+    /**
+     * Automatically perform login ONCE when the plugin starts.
+     */
+    @Override
+    protected void onPluginStart() {
+        registerEvents(new PlayerListener());
+        //HologramRegistryProvider.getHologramRegistryInstance().spawnFromDisk();
+    }
 
-	/**
-	 * Automatically perform login when the plugin starts and each time it is reloaded.
-	 */
-	@Override
-	protected void onReloadablesStart() {
-		registerCommand(new HologramCommand());
+    /**
+     * Automatically perform login when the plugin starts and each time it is reloaded.
+     */
+    @Override
+    protected void onReloadablesStart() {
+        HologramRegistry.loadHolograms();
 
-		Common.runTimer(20, new HologramTask());
-	}
+        for (final HologramRegistry hologram : HologramRegistry.getHolograms()) {
+            HologramProvider.getInstance().createFromRegistry(hologram);
+            System.out.println("Creating holograms");
+        }
 
-	@Override
-	protected void onPluginPreReload() {
-	}
+        registerCommand(new HologramCommand());
 
-	/* ------------------------------------------------------------------------------- */
-	/* Static */
-	/* ------------------------------------------------------------------------------- */
+        Common.runTimer(20, new HologramTask());
+    }
 
-	/**
-	 * Return the instance of this plugin, which simply refers to a static
-	 * field already created for you in SimplePlugin but casts it to your
-	 * specific plugin instance for your convenience.
-	 *
-	 * @return
-	 */
-	public static HologramLib getInstance() {
-		return (HologramLib) SimplePlugin.getInstance();
-	}
+    @Override
+    protected void onPluginPreReload() {
+    }
+
+    /* ------------------------------------------------------------------------------- */
+    /* Static */
+    /* ------------------------------------------------------------------------------- */
+
+    /**
+     * Return the instance of this plugin, which simply refers to a static
+     * field already created for you in SimplePlugin but casts it to your
+     * specific plugin instance for your convenience.
+     *
+     * @return
+     */
+    public static HologramLib getInstance() {
+        return (HologramLib) SimplePlugin.getInstance();
+    }
 }
