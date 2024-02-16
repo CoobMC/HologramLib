@@ -8,7 +8,6 @@ import lombok.Setter;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.protocol.game.ClientboundRemoveEntitiesPacket;
 import net.minecraft.network.protocol.game.ClientboundSetEntityDataPacket;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.level.Level;
 import org.bukkit.Bukkit;
@@ -39,6 +38,8 @@ public class Hologram_v1_19 implements HologramAPI {
     private String permission;
 
     private double displayRange = 48.0;
+
+    private boolean savedToFile;
 
 
     @Override
@@ -71,6 +72,7 @@ public class Hologram_v1_19 implements HologramAPI {
             registry.setHologram(this);
             registry.setPermission(permission);
             this.setDisplayRange(registry.getDisplayRange());
+            this.savedToFile = true;
         }
 
         return this;
@@ -86,6 +88,9 @@ public class Hologram_v1_19 implements HologramAPI {
         final Object nmsWorld = Remain.getHandleWorld(world);
 
         this.setLines(registry.getLines());
+        this.setDisplayRange(registry.getDisplayRange());
+        this.id = registry.getName();
+        this.permission = registry.getPermission();
 
         for (final String line : registry.getLines()) {
             final ArmorStand nmsArmorStand = this.createEntity(nmsWorld, registry.getLocation(), line);
@@ -129,7 +134,6 @@ public class Hologram_v1_19 implements HologramAPI {
             final Player player = Remain.getPlayerByUUID(uuid);
             this.entityLinesList.forEach(armorStand -> {
                 Remain.sendPacket(player, new ClientboundRemoveEntitiesPacket(armorStand.getId()));
-
             });
         }
 
@@ -148,73 +152,80 @@ public class Hologram_v1_19 implements HologramAPI {
     @Override
     public void updateLines(final String... lines) {
         this.setLines(Arrays.asList(lines));
+        // Assume lines is not null and contains the new lines to display
+        int currentSize = this.entityLinesList.size();
+        final int newSize = lines.length;
 
-        for (int i = 0; i < this.entityLinesList.size() && i < lines.length; i++) {
-            final ArmorStand armorStand = this.entityLinesList.get(i);
-            Remain.setCustomName(armorStand.getBukkitEntity(), lines[i]);
+        if (this.savedToFile)
+            HologramRegistry.findById(this.id).setLines(this.lines);
+
+        // Update existing and remove excess lines
+        for (int i = 0; i < currentSize; i++) {
+            if (i < newSize) {
+                // Update existing line
+                final ArmorStand armorStand = this.entityLinesList.get(i);
+                Remain.setCustomName(armorStand.getBukkitEntity(), lines[i]);
+            } else {
+                // Remove excess line
+                final ArmorStand armorStand = this.entityLinesList.remove(i--);
+
+                for (final UUID viewer : viewers)
+                    Remain.sendPacket(Remain.getPlayerByUUID(viewer), new ClientboundRemoveEntitiesPacket(armorStand.getId()));
+
+                armorStand.discard();
+                currentSize--;
+            }
         }
 
-        for (int i = this.entityLinesList.size() - 1; i >= lines.length; i--) {
-            final ArmorStand armorStand = this.entityLinesList.remove(i);
-            armorStand.remove(Entity.RemovalReason.DISCARDED);
-        }
-
-        for (int i = this.entityLinesList.size(); i < lines.length; i++) {
+        // Add new lines if necessary
+        for (int i = currentSize; i < newSize; i++) {
             final ArmorStand newArmorStand = this.addEntity(lines[i]);
-
             this.entityLinesList.add(newArmorStand);
-            final Player[] playerArray = this.viewers.stream().map(Bukkit::getPlayer).toArray(Player[]::new);
-            this.sendPackets(newArmorStand, playerArray);
         }
+
+        refreshHologramForAllViewers();
     }
 
-    @Override
-    public void addLines(final String... lines) {
-        final List<String> newLines = Arrays.asList(lines);
-        this.getLines().addAll(newLines);
-
-        for (final String line : lines) {
-            final ArmorStand nmsArmorStand = this.addEntity(line);
-            this.entityLinesList.add(nmsArmorStand);
-            final Player[] playerArray = this.viewers.stream().map(Bukkit::getPlayer).toArray(Player[]::new);
-            this.sendPackets(nmsArmorStand, playerArray);
-        }
-    }
-
-    public void addLines(int index, final String... lines) { // TODO
-        if (index < 0 || index > this.lines.size()) {
-            index = this.lines.size(); // Ensure the index is within bounds.
-        }
-
-        final List<String> newLines = Arrays.asList(lines);
-        this.lines.addAll(index, newLines); // Insert new lines at the specified index.
-
-        final Location baseLocation = getLocation().clone().add(0, 0.26 * (this.lines.size() - index), 0); // Calculate the base location for new armor stands.
-        for (int i = 0; i < lines.length; i++) {
-            final ArmorStand nmsArmorStand = this.createEntity(((CraftWorld) getWorld()).getHandle(), baseLocation, lines[i]);
-            this.entityLinesList.add(index + i, nmsArmorStand); // Insert new ArmorStand entities at the correct index.
-            baseLocation.subtract(0, 0.26, 0); // Adjust for the next line.
-        }
-
-        // Update visibility for all viewers to reflect changes.
+    private void refreshHologramForAllViewers() {
         this.viewers.forEach(uuid -> {
             final Player player = Bukkit.getPlayer(uuid);
             if (player != null) {
-                this.show(player); // Re-show the entire hologram to update its appearance.
+                hide(player);
+                show(player);
             }
         });
     }
 
     @Override
-    public void removeLines(final Integer... indices) {
-        Arrays.sort(indices, Collections.reverseOrder());
-        for (final int index : indices) {
-            if (index >= 0 && index < this.getLines().size()) {
-                this.getLines().remove(index);
-            }
+    public void addLines(int index, final String... newLines) {
+        this.lines = new ArrayList<>(this.lines);
+
+        if (index < 0) {
+            index = 0;
+        } else if (index > this.lines.size()) {
+            index = this.lines.size();
         }
 
-        updateLines(this.getLines().toArray(new String[0]));
+        final List<String> newLinesList = Arrays.asList(newLines);
+        this.lines.addAll(index, newLinesList);
+
+        updateLines(this.lines.toArray(new String[0]));
+    }
+
+
+    @Override
+    public void addLines(final String... lines) {
+        this.addLines(this.lines.size(), lines);
+    }
+
+    @Override
+    public void removeLines(final Integer... indices) {
+        this.lines = new ArrayList<>(this.lines);
+
+        for (final int index : indices)
+            this.lines.remove(index);
+
+        updateLines(this.lines.toArray(new String[0]));
     }
 
     @Override
@@ -237,7 +248,6 @@ public class Hologram_v1_19 implements HologramAPI {
                 return player.getLocation().distanceSquared(location) <= range * range;
             }
         } catch (final Exception ignored) {
-            // Ignored
         }
         return false;
     }
@@ -262,8 +272,8 @@ public class Hologram_v1_19 implements HologramAPI {
     private void setupArmorStandEntity(final ArmorStand armorStand, final String line) {
         armorStand.setMarker(true);
         armorStand.setSmall(true);
-        //armorStand.setInvisible(true);
-        armorStand.persistentInvisibility = true; // TODO
+        armorStand.setInvisible(true);
+        armorStand.persistentInvisibility = true;
         armorStand.setNoGravity(true);
         armorStand.setCustomNameVisible(true);
         armorStand.setCustomName(CraftChatMessage.fromStringOrNull(line));
@@ -304,36 +314,4 @@ public class Hologram_v1_19 implements HologramAPI {
     public World getWorld() {
         return this.entityLinesList.get(entityLinesList.size() - 1).getBukkitEntity().getWorld();
     }
-
-    /*@Override
-    public SerializedMap serialize() {
-        return SerializedMap.ofArray(
-                "Lines", this.lines,
-                "Location", this.getLocation());
-    }
-
-    public static Hologram_v1_19 deserialize(final SerializedMap map) {
-        final List<String> lines = map.getStringList("Lines");
-        Location lastLocation = map.getLocation("Location");
-
-        final World world = lastLocation.getWorld();
-
-        if (world == null)
-            return null;
-
-        final Object nmsWorld = Remain.getHandleWorld(lastLocation.getWorld());
-        final Hologram_v1_19 hologram = new Hologram_v1_19();
-        final List<ArmorStand> armorStandList = new ArrayList<>();
-
-        hologram.setLines(lines);
-
-        for (final String line : lines) {
-            armorStandList.add(hologram.createEntity(nmsWorld, lastLocation, line));
-            lastLocation = lastLocation.subtract(0, 0.26, 0);
-        }
-
-        hologram.setEntityLinesList(armorStandList);
-
-        return hologram;
-    }*/
 }

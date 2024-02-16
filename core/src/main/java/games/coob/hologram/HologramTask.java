@@ -17,7 +17,7 @@ public final class HologramTask extends BukkitRunnable { // TODO show holograms 
     public void run() {
         for (final HologramRegistry registry : HologramRegistry.getHolograms()) {
             final HologramAPI hologramAPI = registry.getHologram();
-
+            
             for (final Player player : Remain.getOnlinePlayers())
                 hologramAPI.updateVisibility(player);
         }

@@ -26,6 +26,8 @@ public interface HologramAPI {
 
     void addLines(String... lines);
 
+    void addLines(int index, final String... lines);
+
     void removeLines(Integer... indices);
 
     boolean canShow(Player player);

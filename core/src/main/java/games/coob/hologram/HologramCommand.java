@@ -30,13 +30,29 @@ public class HologramCommand extends SimpleCommand {
                 hologram.show(getPlayer());
             }
             case "remove" -> HologramRegistry.findById(id).getHologram().remove();
+            case "addline" -> {
+                final HologramAPI hologramAPI = HologramRegistry.findById(id).getHologram();
+                hologramAPI.addLines("Minecraft", "game");
+            }
+            case "addatindex" -> {
+                final HologramAPI hologramAPI = HologramRegistry.findById(id).getHologram();
+                hologramAPI.addLines(1, "hi");
+            }
+            case "removeline" -> {
+                final HologramAPI hologramAPI = HologramRegistry.findById(id).getHologram();
+                hologramAPI.removeLines(1);
+            }
+            case "update" -> {
+                final HologramAPI hologramAPI = HologramRegistry.findById(id).getHologram();
+                hologramAPI.updateLines("what's", "up");
+            }
         }
     }
 
     @Override
     protected List<String> tabComplete() {
         if (args.length == 1)
-            return this.completeLastWord("create", "remove");
+            return this.completeLastWord("create", "remove", "addLine", "addAtIndex", "removeLine", "update");
         if (args.length == 2)
             return this.completeLastWord("<id/name>");
 
