@@ -1,7 +1,7 @@
 package games.coob.hologram;
 
 import games.coob.hologram.model.HologramProvider;
-import games.coob.nmsinterface.HologramAPI;
+import games.coob.nmsinterface.Hologram;
 import games.coob.nmsinterface.HologramRegistry;
 import org.mineacademy.fo.command.SimpleCommand;
 
@@ -26,24 +26,24 @@ public class HologramCommand extends SimpleCommand {
 
         switch (param) {
             case "create" -> {
-                final HologramAPI hologram = HologramProvider.getInstance().createHologram(id, getPlayer().getLocation(), true, lines, null);
+                final Hologram hologram = HologramProvider.getInstance().createHologram(id, getPlayer().getLocation(), true, lines, null);
                 hologram.show(getPlayer());
             }
             case "remove" -> HologramRegistry.findById(id).getHologram().remove();
             case "addline" -> {
-                final HologramAPI hologramAPI = HologramRegistry.findById(id).getHologram();
+                final Hologram hologramAPI = HologramRegistry.findById(id).getHologram();
                 hologramAPI.addLines("Minecraft", "game");
             }
             case "addatindex" -> {
-                final HologramAPI hologramAPI = HologramRegistry.findById(id).getHologram();
+                final Hologram hologramAPI = HologramRegistry.findById(id).getHologram();
                 hologramAPI.addLines(1, "hi");
             }
             case "removeline" -> {
-                final HologramAPI hologramAPI = HologramRegistry.findById(id).getHologram();
+                final Hologram hologramAPI = HologramRegistry.findById(id).getHologram();
                 hologramAPI.removeLines(1);
             }
             case "update" -> {
-                final HologramAPI hologramAPI = HologramRegistry.findById(id).getHologram();
+                final Hologram hologramAPI = HologramRegistry.findById(id).getHologram();
                 hologramAPI.updateLines("what's", "up");
             }
         }

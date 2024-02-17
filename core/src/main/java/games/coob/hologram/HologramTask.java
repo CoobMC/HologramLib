@@ -1,6 +1,6 @@
 package games.coob.hologram;
 
-import games.coob.nmsinterface.HologramAPI;
+import games.coob.nmsinterface.Hologram;
 import games.coob.nmsinterface.HologramRegistry;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;
@@ -8,27 +8,25 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.mineacademy.fo.remain.Remain;
 
 /**
- * Represents a self-repeating task managing hologram.
+ * Task that periodically updates the visibility of all registered holograms for every online player.
+ * This class extends {@link BukkitRunnable} to facilitate periodic execution within the Bukkit scheduler.
+ * On each run, it iterates through all holograms registered in {@link HologramRegistry} and updates their
+ * visibility based on each player's location, permissions, and other visibility criteria defined in {@link Hologram}.
  */
 @RequiredArgsConstructor
-public final class HologramTask extends BukkitRunnable { // TODO show holograms when rejoining
+public final class HologramTask extends BukkitRunnable {
 
+    /**
+     * Executes the task to update hologram visibility.
+     * This method is called automatically when the task is scheduled to run.
+     */
     @Override
     public void run() {
         for (final HologramRegistry registry : HologramRegistry.getHolograms()) {
-            final HologramAPI hologramAPI = registry.getHologram();
-            
+            final Hologram hologramAPI = registry.getHologram();
+
             for (final Player player : Remain.getOnlinePlayers())
                 hologramAPI.updateVisibility(player);
         }
-
-        //for (final Player player : Remain.getOnlinePlayers()) {
-        //  for (final HologramRegistry hologram : HologramRegistryProvider.getHolograms()) {
-        //    hologram.getHologram().updateVisibility(player);
-				/*if (!player.hasMetadata(hologram.getUniqueId().toString()))
-					hologram.show(player);
-
-				if (player.getLocation().distance(hologram.getLocation()) > hologram.getDisplayRange() && hologram.isViewer(player)) // TODO isShown for a specific player
-					hologram.hide(player);*/
     }
 }

@@ -21,7 +21,7 @@ public class HologramRegistry extends YamlConfig {
 
     private List<String> lines = new ArrayList<>();
 
-    private HologramAPI hologram;
+    private Hologram hologram;
 
     private org.bukkit.Location location;
 
@@ -70,7 +70,7 @@ public class HologramRegistry extends YamlConfig {
         this.save();
     }
 
-    public void setHologram(final HologramAPI hologram) {
+    public void setHologram(final Hologram hologram) {
         this.hologram = hologram;
 
         this.save();
