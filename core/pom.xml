@@ -57,7 +57,7 @@
     <dependencies>
         <dependency>
             <groupId>games.coob</groupId>
-            <artifactId>nmsinterface</artifactId>
+            <artifactId>nms-commons</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>
         </dependency>
@@ -158,29 +158,29 @@
                             <include>games.coob:v1_17*</include>
                             <include>games.coob:v1_18*</include>
                             <include>games.coob:v1_19*</include>
-                            <include>games.coob:nmsinterface*</include>
+                            <include>games.coob:nms-commons*</include>
                         </includes>
                     </artifactSet>
                     <relocations>
                         <relocation>
                             <pattern>org.mineacademy.fo</pattern>
-                            <shadedPattern>${project.groupId}.smp.lib</shadedPattern>
+                            <shadedPattern>${project.groupId}.lib</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>games.coob.v1_17</pattern>
-                            <shadedPattern>${project.groupId}.smp.lib.1_17</shadedPattern>
+                            <shadedPattern>${project.groupId}.lib.1_17</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>games.coob.v1_18</pattern>
-                            <shadedPattern>${project.groupId}.smp.lib.1_18</shadedPattern>
+                            <shadedPattern>${project.groupId}.lib.1_18</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>games.coob.v1_19</pattern>
-                            <shadedPattern>${project.groupId}.smp.lib.1_18</shadedPattern>
+                            <shadedPattern>${project.groupId}.lib.1_18</shadedPattern>
                         </relocation>
                         <relocation>
-                            <pattern>games.coob.nmsinterface</pattern>
-                            <shadedPattern>${project.groupId}.smp.lib.nmsinterface</shadedPattern>
+                            <pattern>games.coob.commons</pattern>
+                            <shadedPattern>${project.groupId}.lib.nms-commons</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>

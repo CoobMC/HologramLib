@@ -9,6 +9,11 @@
         <option value="$PROJECT_DIR$/v1_18/pom.xml" />
         <option value="$PROJECT_DIR$/NMSInterface/pom.xml" />
         <option value="$PROJECT_DIR$/v1_19/pom.xml" />
+        <option value="$PROJECT_DIR$/nms/pom.xml" />
+        <option value="$PROJECT_DIR$/nms/v1_19/pom.xml" />
+        <option value="$PROJECT_DIR$/nms/v1_18/pom.xml" />
+        <option value="$PROJECT_DIR$/nms/v1_17/pom.xml" />
+        <option value="$PROJECT_DIR$/nms-commons/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />

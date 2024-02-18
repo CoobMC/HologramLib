@@ -1,7 +1,7 @@
 package games.coob.hologram;
 
-import games.coob.nmsinterface.Hologram;
-import games.coob.nmsinterface.HologramRegistry;
+import games.coob.commons.Hologram;
+import games.coob.commons.HologramRegistry;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;

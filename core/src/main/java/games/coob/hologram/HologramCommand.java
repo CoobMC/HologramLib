@@ -1,8 +1,8 @@
 package games.coob.hologram;
 
+import games.coob.commons.Hologram;
+import games.coob.commons.HologramRegistry;
 import games.coob.hologram.model.HologramProvider;
-import games.coob.nmsinterface.Hologram;
-import games.coob.nmsinterface.HologramRegistry;
 import org.mineacademy.fo.command.SimpleCommand;
 
 import java.util.List;

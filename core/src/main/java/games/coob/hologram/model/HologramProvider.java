@@ -1,6 +1,6 @@
 package games.coob.hologram.model;
 
-import games.coob.nmsinterface.Hologram;
+import games.coob.commons.Hologram;
 import games.coob.v1_19.Hologram_v1_19;
 import org.mineacademy.fo.MinecraftVersion;
 import org.mineacademy.fo.exception.FoException;

@@ -11,9 +11,12 @@
         <module name="core" />
         <module name="v1_19" />
         <module name="v1_17" />
-        <module name="nmsinterface" />
         <module name="v1_18" />
+        <module name="nms-commons" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="nms" target="18" />
+    </bytecodeTargetLevel>
   </component>
 </project>

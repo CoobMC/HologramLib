@@ -1,8 +1,8 @@
 package games.coob.hologram;
 
+import games.coob.commons.HologramRegistry;
 import games.coob.hologram.listener.PlayerListener;
 import games.coob.hologram.model.HologramProvider;
-import games.coob.nmsinterface.HologramRegistry;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.plugin.SimplePlugin;
 
