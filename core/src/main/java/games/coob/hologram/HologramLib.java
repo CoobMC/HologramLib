@@ -15,6 +15,8 @@ import org.mineacademy.fo.plugin.SimplePlugin;
  */
 public final class HologramLib extends SimplePlugin { // TODO make people load the API | make a lib package for with used foundation classes
 
+    //TODO create load method
+
     /**
      * Automatically perform login ONCE when the plugin starts.
      */

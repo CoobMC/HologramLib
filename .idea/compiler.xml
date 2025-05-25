@@ -9,6 +9,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="core" />
+        <module name="v1_20" />
+        <module name="v1_21" />
         <module name="v1_19" />
         <module name="v1_17" />
         <module name="v1_18" />

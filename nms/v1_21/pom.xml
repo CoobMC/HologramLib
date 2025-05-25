@@ -7,19 +7,16 @@
 
     <!-- Module coordinates -->
     <groupId>games.coob</groupId>
-    <artifactId>v1_20</artifactId>
+    <artifactId>v1_21</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <properties>
-        <!-- Latest stable Paper/Spigot mapping for MC 1.20.4 -->
-        <remapped.version>1.20.6-R0.1-SNAPSHOT</remapped.version>
+        <!-- Mojang-mapped Spigot for MC 1.21.5 -->
+        <remapped.version>1.21.4-R0.1-SNAPSHOT</remapped.version>
 
-        <!-- 1.20+ requires Java 17 at runtime; compile with 17 to unlock
-             records/sealed classes used inside Mojang-mapped sources       -->
+        <!-- 1.21+ requires Java 21 -->
         <java.version>17</java.version>
-
-        <!-- Silence Maven 3.9+ toolchain warning if you build with JDK 17   -->
         <maven.compiler.release>${java.version}</maven.compiler.release>
     </properties>
 
@@ -46,7 +43,7 @@
             <version>1.0.0</version>
         </dependency>
 
-        <!-- Mojang-mapped Spigot for 1.20.4 -->
+        <!-- Mojang-mapped Spigot jar -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
@@ -55,7 +52,7 @@
             <classifier>remapped-mojang</classifier>
         </dependency>
 
-        <!-- Optional: utility collections used by NMS (unchanged) -->
+        <!-- Optional: fastutil -->
         <dependency>
             <groupId>it.unimi.dsi</groupId>
             <artifactId>fastutil</artifactId>
@@ -68,14 +65,14 @@
         <finalName>${project.artifactId}-${project.version}</finalName>
 
         <plugins>
-            <!-- plain JAR -->
+            <!-- jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.3.0</version>
             </plugin>
 
-            <!-- compile with Java 17 -->
+            <!-- Java 21 compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -86,14 +83,14 @@
                 </configuration>
             </plugin>
 
-            <!-- SpecialSource: re-obfuscate to Spigot’s runtime mappings     -->
+            <!-- SpecialSource re-obfuscation -->
             <plugin>
                 <groupId>net.md-5</groupId>
                 <artifactId>specialsource-maven-plugin</artifactId>
                 <version>1.2.4</version>
 
                 <executions>
-                    <!-- first pass: Mojang ➜ intermediary (obf) -->
+                    <!-- Mojang ➜ intermediary -->
                     <execution>
                         <id>remap-obf</id>
                         <phase>package</phase>
@@ -113,7 +110,7 @@
                         </configuration>
                     </execution>
 
-                    <!-- second pass: obf ➜ Spigot runtime (CSRG) -->
+                    <!-- intermediary ➜ Spigot runtime -->
                     <execution>
                         <id>remap-spigot</id>
                         <phase>package</phase>

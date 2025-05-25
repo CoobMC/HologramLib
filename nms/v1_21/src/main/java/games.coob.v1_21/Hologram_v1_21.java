@@ -1,4 +1,4 @@
-package games.coob.v1_20;
+package games.coob.v1_21;
 
 import games.coob.commons.Hologram;
 import games.coob.commons.HologramRegistry;
@@ -7,8 +7,8 @@ import net.minecraft.network.protocol.game.ClientboundRemoveEntitiesPacket;
 import net.minecraft.network.protocol.game.ClientboundSetEntityDataPacket;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_20_R4.CraftWorld;
-import org.bukkit.craftbukkit.v1_20_R4.util.CraftChatMessage;
+import org.bukkit.craftbukkit.v1_21_R3.CraftWorld;
+import org.bukkit.craftbukkit.v1_21_R3.util.CraftChatMessage;
 import org.bukkit.entity.Player;
 import org.mineacademy.fo.remain.Remain;
 
@@ -21,7 +21,7 @@ import java.util.UUID;
  * A concrete implementation of {@link Hologram} for Minecraft version 1.19.
  * This class provides version-specific logic for creating, displaying, and managing holograms.
  */
-public class Hologram_v1_20 extends Hologram {
+public class Hologram_v1_21 extends Hologram {
 
     /**
      * A list of ArmorStand entities used to display the lines of the hologram.
@@ -64,12 +64,30 @@ public class Hologram_v1_20 extends Hologram {
      * In version 1.19, this method uses {@link ClientboundAddEntityPacket} and other packets
      * to control the visibility of each line represented by ArmorStand entities.
      *
-     * @param armorStand The armor stand entity whose visibility is being updated.
-     * @param player     The player to whom the packet is sent.
+     * @param stand  The armor stand entity whose visibility is being updated.
+     * @param player The player to whom the packet is sent.
      */
-    private void sendPackets(final ArmorStand armorStand, final Player player) {
-        Remain.sendPacket(player, new ClientboundAddEntityPacket(armorStand));
-        Remain.sendPacket(player, new ClientboundSetEntityDataPacket(armorStand.getId(), armorStand.getEntityData().getNonDefaultValues()));
+    // replace the whole helper
+    private void sendPackets(final ArmorStand stand, final Player player) {
+
+        // 0 = no extra data (same value Spigot used for 1.20)
+        final ClientboundAddEntityPacket add =
+                new ClientboundAddEntityPacket(
+                        stand.getId(),
+                        stand.getUUID(),
+                        stand.getX(), stand.getY(), stand.getZ(),
+                        stand.getXRot(), stand.getYRot(),
+                        stand.getType(),
+                        0,
+                        stand.getDeltaMovement(),        // velocity
+                        stand.getYHeadRot());
+
+        Remain.sendPacket(player, add);
+
+        Remain.sendPacket(player,
+                new ClientboundSetEntityDataPacket(
+                        stand.getId(),
+                        stand.getEntityData().getNonDefaultValues()));
     }
 
     /**

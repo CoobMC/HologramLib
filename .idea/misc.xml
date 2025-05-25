@@ -14,9 +14,10 @@
         <option value="$PROJECT_DIR$/nms/v1_18/pom.xml" />
         <option value="$PROJECT_DIR$/nms/v1_17/pom.xml" />
         <option value="$PROJECT_DIR$/nms-commons/pom.xml" />
+        <option value="$PROJECT_DIR$/nms/v1_20/pom.xml" />
+        <option value="$PROJECT_DIR$/nms/v1_21/pom.xml" />
       </list>
     </option>
-    <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="18" project-jdk-type="JavaSDK" />
 </project>

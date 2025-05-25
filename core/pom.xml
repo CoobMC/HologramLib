@@ -34,7 +34,7 @@
 
         <!-- Change foundation.version to the latest one from
              https://github.com/kangarko/Foundation/releases -->
-        <foundation.version>6.6.2</foundation.version>
+        <foundation.version>6.9.20</foundation.version>
 
         <remapped.version>1.19.4-R0.1-SNAPSHOT</remapped.version>
 
