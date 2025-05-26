@@ -5,36 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1db24b0c-3aac-41c3-a968-b49ecc3e427b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/nms/v1_21/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nms/v1_21/src/main/java/games.coob.v1_21/Hologram_v1_21.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/HologramLib.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/HologramLib.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/HologramLib.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/core-1.0.0-remapped-obf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/core-1.0.0-remapped-obf.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/original-HologramLib-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/original-HologramLib-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms-commons/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nms-commons/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms-commons/src/main/java/games/coob/commons/HologramAPI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms-commons/target/classes/games/coob/commons/Hologram.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms-commons/target/classes/games/coob/commons/HologramRegistry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_19/target/classes/games/coob/v1_19/Hologram_v1_19.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_20/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/src/main/java/games.coob.v1_20/HologramRegistryOld_v1_20.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/src/main/java/games.coob.v1_20/HologramRegistry_v1_20.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/src/main/java/games.coob.v1_20/Hologram_v1_20.java" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_20/src/main/java/games.coob.v1_20/Hologram_v1_20.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/src/main/java/games.coob.v1_20/NMSHologram_v1_20.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/target/classes/games/coob/v1_19/HologramRegistry_v1_19.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/target/classes/games/coob/v1_19/Hologram_v1_19.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/target/original-v1_19-1.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/target/v1_19-1.0.0-remapped-obf.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_20/target/v1_19-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/HologramProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/HologramProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_12.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_16.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_8.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_17/src/main/java/games.coob.v1_17/HologramRegistry_v1_17.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_17/src/main/java/games.coob.v1_17/NMSHologram_v1_17.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_18/src/main/java/games.coob.v1_18/HologramRegistry_v1_18.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_18/src/main/java/games.coob.v1_18/NMSHologram_v1_18.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_19/src/main/java/games.coob.v1_19/Hologram_v1_19_Old.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,10 +95,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="games.coob.v1_17" />
+      <recent name="games.coob.v1_18" />
       <recent name="games.coob.v1_19" />
       <recent name="games.coob.hologram.model" />
       <recent name="games.coob.nmsinterface" />
-      <recent name="games.coob.hologram.listener" />
     </key>
   </component>
   <component name="RunManager" selected="Maven.core [clean,install]">
@@ -353,7 +335,7 @@
       <workItem from="1708175803182" duration="7010000" />
       <workItem from="1743268518533" duration="2022000" />
       <workItem from="1743595527828" duration="2000" />
-      <workItem from="1748170632951" duration="9342000" />
+      <workItem from="1748170632951" duration="12426000" />
     </task>
     <servers />
   </component>

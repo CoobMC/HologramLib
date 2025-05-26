@@ -36,8 +36,6 @@
              https://github.com/kangarko/Foundation/releases -->
         <foundation.version>6.9.20</foundation.version>
 
-        <remapped.version>1.19.4-R0.1-SNAPSHOT</remapped.version>
-
         <!-- DO NOT EDIT -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -79,32 +77,21 @@
             <version>1.0.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>games.coob</groupId>
+            <artifactId>v1_20</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>games.coob</groupId>
+            <artifactId>v1_21</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <!-- Use our Foundation library -->
         <dependency>
             <groupId>com.github.kangarko</groupId>
             <artifactId>Foundation</artifactId>
             <version>${foundation.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>coob.games.server</groupId>
-            <artifactId>Paper-1.16</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/library/patched_1.16.5.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>coob.games.server</groupId>
-            <artifactId>Paper-1.12</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/library/patched_1.12.2.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>coob.games.server</groupId>
-            <artifactId>Paper-1.8</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/library/patched_1.8.8.jar</systemPath>
         </dependency>
     </dependencies>
 
@@ -118,7 +105,7 @@
 
                 <!-- Change version to the latest one from
                      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-                <version>3.2.2</version>
+                <version>3.4.2</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -126,7 +113,7 @@
 
                 <!-- Change version to the latest one from
                      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-                <version>3.10.1</version>
+                <version>3.14.0</version>
                 <configuration>
                     <source>16</source>
                     <target>16</target>
@@ -158,6 +145,8 @@
                             <include>games.coob:v1_17*</include>
                             <include>games.coob:v1_18*</include>
                             <include>games.coob:v1_19*</include>
+                            <include>games.coob:v1_20*</include>
+                            <include>games.coob:v1_21*</include>
                             <include>games.coob:nms-commons*</include>
                         </includes>
                     </artifactSet>
@@ -179,58 +168,19 @@
                             <shadedPattern>${project.groupId}.lib.1_18</shadedPattern>
                         </relocation>
                         <relocation>
+                            <pattern>games.coob.v1_20</pattern>
+                            <shadedPattern>${project.groupId}.lib.1_20</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>games.coob.v1_21</pattern>
+                            <shadedPattern>${project.groupId}.lib.1_21</shadedPattern>
+                        </relocation>
+                        <relocation>
                             <pattern>games.coob.commons</pattern>
                             <shadedPattern>${project.groupId}.lib.nms-commons</shadedPattern>
                         </relocation>
                     </relocations>
-                    <filters>
-                        <filter>
-                            <artifact>com.elmakers.mine.bukkit:*</artifact>
-                            <excludes>
-                                <exclude>*.yml</exclude>
-                                <exclude>*.php</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.md-5</groupId>
-                <artifactId>specialsource-maven-plugin</artifactId>
-                <!-- Get the latest version from https://mvnrepository.com/artifact/net.md-5/specialsource-maven-plugin -->
-                <version>1.2.4</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>remap</goal>
-                        </goals>
-                        <id>remap-obf</id>
-                        <configuration>
-                            <srgIn>org.spigotmc:minecraft-server:${remapped.version}:txt:maps-mojang</srgIn>
-                            <reverse>true</reverse>
-                            <remappedDependencies>org.spigotmc:spigot:${remapped.version}:jar:remapped-mojang
-                            </remappedDependencies>
-                            <remappedArtifactAttached>true</remappedArtifactAttached>
-                            <remappedClassifierName>remapped-obf</remappedClassifierName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>remap</goal>
-                        </goals>
-                        <id>remap-spigot</id>
-                        <configuration>
-                            <inputFile>
-                                ${project.build.directory}/${project.artifactId}-${project.version}-remapped-obf.jar
-                            </inputFile>
-                            <srgIn>org.spigotmc:minecraft-server:${remapped.version}:csrg:maps-spigot</srgIn>
-                            <remappedDependencies>org.spigotmc:spigot:${remapped.version}:jar:remapped-obf
-                            </remappedDependencies>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
         <resources>
