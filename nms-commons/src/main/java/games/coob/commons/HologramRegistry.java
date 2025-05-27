@@ -23,7 +23,7 @@ public class HologramRegistry extends YamlConfig {
 
     private Hologram hologram;
 
-    private org.bukkit.Location location;
+    private Location location;
 
     private String permission;
 

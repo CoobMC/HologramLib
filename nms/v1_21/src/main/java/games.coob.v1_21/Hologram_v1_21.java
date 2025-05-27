@@ -5,9 +5,12 @@ import games.coob.commons.HologramRegistry;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.protocol.game.ClientboundRemoveEntitiesPacket;
 import net.minecraft.network.protocol.game.ClientboundSetEntityDataPacket;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_21_R3.CraftWorld;
+import org.bukkit.craftbukkit.v1_21_R3.entity.CraftPlayer;
 import org.bukkit.craftbukkit.v1_21_R3.util.CraftChatMessage;
 import org.bukkit.entity.Player;
 import org.mineacademy.fo.remain.Remain;
@@ -67,27 +70,20 @@ public class Hologram_v1_21 extends Hologram {
      * @param stand  The armor stand entity whose visibility is being updated.
      * @param player The player to whom the packet is sent.
      */
-    // replace the whole helper
-    private void sendPackets(final ArmorStand stand, final Player player) {
+    private static void sendPackets(final ArmorStand stand, final Player player) {
+        final ServerPlayer nms = ((CraftPlayer) player).getHandle();
+        final ServerGamePacketListenerImpl connection = nms.connection;
 
-        // 0 = no extra data (same value Spigot used for 1.20)
-        final ClientboundAddEntityPacket add =
-                new ClientboundAddEntityPacket(
-                        stand.getId(),
-                        stand.getUUID(),
-                        stand.getX(), stand.getY(), stand.getZ(),
-                        stand.getXRot(), stand.getYRot(),
-                        stand.getType(),
-                        0,
-                        stand.getDeltaMovement(),        // velocity
-                        stand.getYHeadRot());
+        connection.send(new ClientboundAddEntityPacket(
+                stand.getId(), stand.getUUID(),
+                stand.getX(), stand.getY(), stand.getZ(),
+                stand.getXRot(), stand.getYRot(),
+                stand.getType(), 0,
+                stand.getDeltaMovement(),
+                stand.getYHeadRot()));
 
-        Remain.sendPacket(player, add);
-
-        Remain.sendPacket(player,
-                new ClientboundSetEntityDataPacket(
-                        stand.getId(),
-                        stand.getEntityData().getNonDefaultValues()));
+        connection.send(new ClientboundSetEntityDataPacket(
+                stand.getId(), stand.getEntityData().getNonDefaultValues()));
     }
 
     /**

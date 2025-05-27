@@ -3,8 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Change groupId to your own main package name -->
-    <groupId>games.coob</groupId>
+    <parent>
+        <groupId>games.coob</groupId>
+        <artifactId>hologramlib-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
     <!-- Change artifactId to your plugin name, lower cased. Do NOT use spaces. -->
     <artifactId>core</artifactId>
@@ -25,32 +29,7 @@
 
         <!-- Change main.class to the full path where the class extending SimplePlugin is located -->
         <main.class>games.coob.hologram.HologramLib</main.class>
-
-        <!-- Change java.version to the Java version used when compiling.
-             If you use 1.8 then your plugin will work on newer versions,
-             but if you use "11" or "16" then it will not load on servers
-             with previous Java version. We recommend you stick with 1.8. -->
-        <java.version>1.8</java.version>
-
-        <!-- Change foundation.version to the latest one from
-             https://github.com/kangarko/Foundation/releases -->
-        <foundation.version>6.9.20</foundation.version>
-
-        <!-- DO NOT EDIT -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <repositories>
-        <!-- DO NOT EDIT, used to pull Foundation from the JitPack site -->
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-        <repository>
-            <id>Maven Central</id>
-            <url>https://repo1.maven.org/maven2/</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
@@ -97,35 +76,25 @@
 
     <!-- DO NOT EDIT unless instructed to do so or you know what you're doing -->
     <build>
-        <finalName>${project.name}-${project.version}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
+        <finalName>${project.artifactId}-${project.version}</finalName>
 
-                <!-- Change version to the latest one from
-                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-                <version>3.4.2</version>
-            </plugin>
+        <plugins>
+            <!-- only the bits that differ from parent -->
+
+            <!-- compile to Java 16 byte‑code so the plugin runs on JRE 16+ -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-
-                <!-- Change version to the latest one from
-                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-                <version>3.14.0</version>
                 <configuration>
-                    <source>16</source>
-                    <target>16</target>
+                    <release>16</release>
                 </configuration>
             </plugin>
+
+            <!-- shade & relocate internals -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
 
-                <!-- Change version to the latest one from (3.2.4 > 16 < 3.3.0-SNAPSHOT)
-                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
-                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -134,13 +103,24 @@
                         </goals>
                     </execution>
                 </executions>
+
                 <configuration>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
+
+                    <filters>
+                        <filter>
+                            <!-- match every shaded dependency -->
+                            <artifact>*:*</artifact>
+
+                            <!-- leave their manifests out so the warning disappears -->
+                            <excludes>
+                                <exclude>META-INF/MANIFEST.MF</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+
                     <artifactSet>
                         <includes>
-
-                            <!-- IF you have Foundation on your disk, change include to org.mineacademy,
-                                 if you pull Foundation from the Internet use com.github.kangarko  -->
                             <include>com.github.kangarko:Foundation*</include>
                             <include>games.coob:v1_17*</include>
                             <include>games.coob:v1_18*</include>
@@ -150,11 +130,13 @@
                             <include>games.coob:nms-commons*</include>
                         </includes>
                     </artifactSet>
+
                     <relocations>
                         <relocation>
                             <pattern>org.mineacademy.fo</pattern>
                             <shadedPattern>${project.groupId}.lib</shadedPattern>
                         </relocation>
+
                         <relocation>
                             <pattern>games.coob.v1_17</pattern>
                             <shadedPattern>${project.groupId}.lib.1_17</shadedPattern>
@@ -165,7 +147,7 @@
                         </relocation>
                         <relocation>
                             <pattern>games.coob.v1_19</pattern>
-                            <shadedPattern>${project.groupId}.lib.1_18</shadedPattern>
+                            <shadedPattern>${project.groupId}.lib.1_19</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>games.coob.v1_20</pattern>
@@ -183,6 +165,7 @@
                 </configuration>
             </plugin>
         </plugins>
+
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

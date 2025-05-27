@@ -1,61 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Inherit shared config -->
+    <parent>
+        <groupId>games.coob</groupId>
+        <artifactId>hologramlib-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../../pom.xml</relativePath> <!-- adjust if folder depth differs -->
+    </parent>
+
     <!-- Module coordinates -->
-    <groupId>games.coob</groupId>
     <artifactId>v1_20</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+    <!-- ─────────────── properties ─────────────── -->
     <properties>
-        <!-- Latest stable Paper/Spigot mapping for MC 1.20.4 -->
+        <!-- Mojang-mapped Spigot for MC 1.20.6 -->
         <remapped.version>1.20.6-R0.1-SNAPSHOT</remapped.version>
-
-        <!-- 1.20+ requires Java 17 at runtime; compile with 17 to unlock
-             records/sealed classes used inside Mojang-mapped sources       -->
         <java.version>17</java.version>
-
-        <!-- Silence Maven 3.9+ toolchain warning if you build with JDK 17   -->
-        <maven.compiler.release>${java.version}</maven.compiler.release>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-        <repository>
-            <id>central</id>
-            <url>https://repo1.maven.org/maven2/</url>
-        </repository>
-    </repositories>
-
+    <!-- ─────────────── dependencies ─────────────── -->
     <dependencies>
-        <!-- Shared commons -->
+        <!-- Commons shared by all NMS modules -->
         <dependency>
             <groupId>games.coob</groupId>
             <artifactId>nms-commons</artifactId>
             <version>1.0.0</version>
         </dependency>
 
-        <!-- Mojang-mapped Spigot for 1.20.4 -->
+        <!-- Mojang-mapped Spigot API -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
             <version>${remapped.version}</version>
-            <scope>provided</scope>
             <classifier>remapped-mojang</classifier>
+            <scope>provided</scope>
         </dependency>
 
-        <!-- Optional: utility collections used by NMS (unchanged) -->
+        <!-- Optional helper collections -->
         <dependency>
             <groupId>it.unimi.dsi</groupId>
             <artifactId>fastutil</artifactId>
@@ -64,36 +52,18 @@
         </dependency>
     </dependencies>
 
+    <!-- ─────────────── build ─────────────── -->
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
 
         <plugins>
-            <!-- plain JAR -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
-            </plugin>
-
-            <!-- compile with Java 17 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-
-            <!-- SpecialSource: re-obfuscate to Spigot’s runtime mappings     -->
+            <!-- SpecialSource: Mojang map ➜ intermediary ➜ Spigot runtime -->
             <plugin>
                 <groupId>net.md-5</groupId>
                 <artifactId>specialsource-maven-plugin</artifactId>
-                <version>1.2.4</version>
 
                 <executions>
-                    <!-- first pass: Mojang ➜ intermediary (obf) -->
+                    <!-- 1st pass -->
                     <execution>
                         <id>remap-obf</id>
                         <phase>package</phase>
@@ -113,7 +83,7 @@
                         </configuration>
                     </execution>
 
-                    <!-- second pass: obf ➜ Spigot runtime (CSRG) -->
+                    <!-- 2nd pass -->
                     <execution>
                         <id>remap-spigot</id>
                         <phase>package</phase>
@@ -135,12 +105,5 @@
                 </executions>
             </plugin>
         </plugins>
-
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
     </build>
 </project>

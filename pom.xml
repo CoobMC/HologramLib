@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>games.coob</groupId>
+    <artifactId>hologramlib-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>nms-commons</module>
+        <module>nms/v1_17</module>
+        <module>nms/v1_18</module>
+        <module>nms/v1_19</module>
+        <module>nms/v1_20</module>
+        <module>nms/v1_21</module>
+        <module>core</module>
+    </modules>
+
+    <!-- Single place for plugin versions, repositories, toolchains-props … -->
+    <properties>
+        <!-- Change version to the latest one from
+                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+        <maven.jar.plugin.version>3.4.2</maven.jar.plugin.version>
+        <!-- Change version to the latest one from
+                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+        <maven.compiler.plugin.version>3.14.0</maven.compiler.plugin.version>
+        <!-- Change version to the latest one from (3.2.4 > 16 < 3.3.0-SNAPSHOT)
+                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
+        <maven.shade.plugin.version>3.6.0</maven.shade.plugin.version>
+        <!-- Get the latest version from https://mvnrepository.com/artifact/net.md-5/specialsource-maven-plugin -->
+        <specialsource.plugin.version>2.0.4</specialsource.plugin.version>
+
+        <!-- encoding / tool-chain defaults -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Change java.version to the Java version used when compiling.
+     If you use 1.8 then your plugin will work on newer versions,
+     but if you use "11" or "16" then it will not load on servers
+     with previous Java version. We recommend you stick with 1.8. -->
+        <java.version>8</java.version>          <!-- overridden in v1_21 -->
+
+        <!-- Change foundation.version to the latest one from
+               https://github.com/kangarko/Foundation/releases -->
+        <foundation.version>6.9.20</foundation.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+
+                <!-- Java compiler -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <!-- emit Java 17 byte-code unless a child overrides -->
+                        <release>${java.version}</release>
+                    </configuration>
+                </plugin>
+
+                <!-- Standard JAR creation -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven.jar.plugin.version}</version>
+                </plugin>
+
+                <!-- Shade (relocation / uber-jar) -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${maven.shade.plugin.version}</version>
+                </plugin>
+
+                <!-- SpecialSource – Spigot re-obfuscation -->
+                <plugin>
+                    <groupId>net.md-5</groupId>
+                    <artifactId>specialsource-maven-plugin</artifactId>
+                    <version>${specialsource.plugin.version}</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

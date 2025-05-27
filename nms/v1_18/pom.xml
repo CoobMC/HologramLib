@@ -1,45 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
-    <groupId>games.coob</groupId>
+
+    <!-- inherit shared configuration -->
+    <parent>
+        <groupId>games.coob</groupId>
+        <artifactId>hologramlib-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../../pom.xml</relativePath> <!-- adjust if folder depth differs -->
+    </parent>
+
+    <!-- module coordinates -->
     <artifactId>v1_18</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+    <!-- ───────────── properties ───────────── -->
     <properties>
         <remapped.version>1.18.2-R0.1-SNAPSHOT</remapped.version>
-        <java.version>1.8</java.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-        <repository>
-            <id>Maven Central</id>
-            <url>https://repo1.maven.org/maven2/</url>
-        </repository>
-    </repositories>
-
+    <!-- ───────────── dependencies ───────────── -->
     <dependencies>
+        <!-- shared commons -->
         <dependency>
             <groupId>games.coob</groupId>
             <artifactId>nms-commons</artifactId>
             <version>1.0.0</version>
         </dependency>
+
+        <!-- Mojang-mapped Spigot -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
             <version>${remapped.version}</version>
-            <scope>provided</scope>
             <classifier>remapped-mojang</classifier>
+            <scope>provided</scope>
         </dependency>
+
+        <!-- optional helper collections -->
         <dependency>
             <groupId>it.unimi.dsi</groupId>
             <artifactId>fastutil</artifactId>
@@ -48,73 +50,67 @@
         </dependency>
     </dependencies>
 
+    <!-- ───────────── build ───────────── -->
     <build>
-        <finalName>${project.name}-${project.version}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
+        <finalName>${project.artifactId}-${project.version}</finalName>
 
-                <!-- Change version to the latest one from
-                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-                <version>3.2.2</version>
-            </plugin>
+        <plugins>
+            <!-- override compiler release to 8 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-
-                <!-- Change version to the latest one from
-                     https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-                <version>3.10.1</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
+
+            <!-- two-pass SpecialSource remap -->
             <plugin>
                 <groupId>net.md-5</groupId>
                 <artifactId>specialsource-maven-plugin</artifactId>
-                <!-- Get the latest version from https://mvnrepository.com/artifact/net.md-5/specialsource-maven-plugin -->
-                <version>1.2.4</version>
+
                 <executions>
+                    <!-- 1st pass: Mojang ➜ intermediary -->
                     <execution>
+                        <id>remap-obf</id>
                         <phase>package</phase>
                         <goals>
                             <goal>remap</goal>
                         </goals>
-                        <id>remap-obf</id>
                         <configuration>
-                            <srgIn>org.spigotmc:minecraft-server:${remapped.version}:txt:maps-mojang</srgIn>
+                            <srgIn>
+                                org.spigotmc:minecraft-server:${remapped.version}:txt:maps-mojang
+                            </srgIn>
                             <reverse>true</reverse>
-                            <remappedDependencies>org.spigotmc:spigot:${remapped.version}:jar:remapped-mojang
+                            <remappedDependencies>
+                                org.spigotmc:spigot:${remapped.version}:jar:remapped-mojang
                             </remappedDependencies>
                             <remappedArtifactAttached>true</remappedArtifactAttached>
                             <remappedClassifierName>remapped-obf</remappedClassifierName>
                         </configuration>
                     </execution>
+
+                    <!-- 2nd pass: intermediary ➜ Spigot runtime -->
                     <execution>
+                        <id>remap-spigot</id>
                         <phase>package</phase>
                         <goals>
                             <goal>remap</goal>
                         </goals>
-                        <id>remap-spigot</id>
                         <configuration>
                             <inputFile>
-                                target/v1_18-1.0.0-remapped-obf.jar
+                                ${project.build.directory}/${project.artifactId}-${project.version}-remapped-obf.jar
                             </inputFile>
-                            <srgIn>org.spigotmc:minecraft-server:${remapped.version}:csrg:maps-spigot</srgIn>
-                            <remappedDependencies>org.spigotmc:spigot:${remapped.version}:jar:remapped-obf
+                            <srgIn>
+                                org.spigotmc:minecraft-server:${remapped.version}:csrg:maps-spigot
+                            </srgIn>
+                            <remappedDependencies>
+                                org.spigotmc:spigot:${remapped.version}:jar:remapped-obf
                             </remappedDependencies>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
     </build>
 </project>

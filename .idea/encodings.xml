@@ -3,7 +3,21 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms-commons/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms-commons/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/nms/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/nms/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms/v1_17/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms/v1_17/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms/v1_18/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms/v1_18/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms/v1_19/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms/v1_19/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms/v1_20/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms/v1_20/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms/v1_21/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nms/v1_21/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>

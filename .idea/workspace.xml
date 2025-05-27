@@ -5,17 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1db24b0c-3aac-41c3-a968-b49ecc3e427b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/HologramLib.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/HologramProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/HologramProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_12.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_16.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/games/coob/hologram/model/NMSHologram_v1_8.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_17/src/main/java/games.coob.v1_17/HologramRegistry_v1_17.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_17/src/main/java/games.coob.v1_17/NMSHologram_v1_17.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_18/src/main/java/games.coob.v1_18/HologramRegistry_v1_18.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_18/src/main/java/games.coob.v1_18/NMSHologram_v1_18.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nms/v1_19/src/main/java/games.coob.v1_19/Hologram_v1_19_Old.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/HologramTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/HologramTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/model/HologramProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/games/coob/hologram/model/HologramProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/core-1.0.0-remapped-obf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/original-HologramLib-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms-commons/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nms-commons/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms-commons/src/main/java/games/coob/commons/HologramRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/nms-commons/src/main/java/games/coob/commons/HologramRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms-commons/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/nms-commons/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms-commons/target/nms-commons-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/nms-commons/target/nms-commons-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_17/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_17/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_17/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_17/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_17/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_17/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_17/target/original-v1_17-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_17/target/original-v1_17-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_17/target/v1_17-1.0.0-remapped-obf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_17/target/v1_17-1.0.0-remapped-obf.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_17/target/v1_17-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_17/target/v1_17-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_18/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_18/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_18/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_18/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_18/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_18/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_18/target/original-v1_18-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_18/target/original-v1_18-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_18/target/v1_18-1.0.0-remapped-obf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_18/target/v1_18-1.0.0-remapped-obf.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_18/target/v1_18-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_18/target/v1_18-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_19/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_19/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_19/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_19/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_19/target/original-v1_19-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_19/target/original-v1_19-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_19/target/v1_19-1.0.0-remapped-obf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_19/target/v1_19-1.0.0-remapped-obf.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_19/target/v1_19-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_19/target/v1_19-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_20/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_20/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_21/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_21/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nms/v1_21/src/main/java/games.coob.v1_21/Hologram_v1_21.java" beforeDir="false" afterPath="$PROJECT_DIR$/nms/v1_21/src/main/java/games.coob.v1_21/Hologram_v1_21.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +67,7 @@
       <MavenImportingSettings>
         <option name="downloadDocsAutomatically" value="true" />
         <option name="downloadSourcesAutomatically" value="true" />
+        <option name="jdkForImporter" value="openjdk-21" />
         <option name="workspaceImportForciblyTurnedOn" value="true" />
       </MavenImportingSettings>
     </option>
@@ -59,6 +84,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven.core [clean,install].executor": "Run",
+    "Maven.hologramlib-parent [clean,install].executor": "Run",
     "Maven.nms-commons [clean,install].executor": "Run",
     "Maven.nmsinterface [clean,install].executor": "Run",
     "Maven.v1_19 [clean,install].executor": "Run",
@@ -75,10 +101,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -102,7 +128,7 @@
       <recent name="games.coob.nmsinterface" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.core [clean,install]">
+  <component name="RunManager" selected="Maven.hologramlib-parent [clean,install]">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="nms-commons" />
       <method v="2">
@@ -142,6 +168,37 @@
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/core" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="hologramlib-parent [clean,install]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
@@ -304,6 +361,7 @@
     </configuration>
     <list>
       <item itemvalue="Maven.core [clean,install]" />
+      <item itemvalue="Maven.hologramlib-parent [clean,install]" />
       <item itemvalue="Maven.nms-commons [clean,install]" />
       <item itemvalue="Maven.v1_17 [clean,install]" />
       <item itemvalue="Maven.v1_18 [clean,install]" />
@@ -335,7 +393,7 @@
       <workItem from="1708175803182" duration="7010000" />
       <workItem from="1743268518533" duration="2022000" />
       <workItem from="1743595527828" duration="2000" />
-      <workItem from="1748170632951" duration="12426000" />
+      <workItem from="1748170632951" duration="21874000" />
     </task>
     <servers />
   </component>
