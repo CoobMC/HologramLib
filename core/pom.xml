@@ -76,7 +76,7 @@
 
     <!-- DO NOT EDIT unless instructed to do so or you know what you're doing -->
     <build>
-        <finalName>${project.artifactId}-${project.version}</finalName>
+        <finalName>${project.name}-${project.version}</finalName>
 
         <plugins>
             <!-- only the bits that differ from parent -->
